@@ -29,9 +29,14 @@ namespace {{invokerPackage}}\Test\Api;
 use {{invokerPackage}}\Configuration;
 use {{invokerPackage}}\ApiException;
 use PHPUnit\Framework\TestCase;
-use {{invokerPackage}}\Api\OrdersV0Api;
+use {{invokerPackage}}\Api\{{classname}};
 use OpenAPI\Client\Test\TestHelper;
 use SpApi\AuthAndAuth\LWAAuthorizationCredentials;
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable('../../../sdk');
+$dotenv->load();
+
 
 /**
 * {{classname}}Test Class Doc Comment
@@ -50,13 +55,13 @@ use SpApi\AuthAndAuth\LWAAuthorizationCredentials;
     public function setUp(): void
     {
     $lwaAuthorizationCredentials = new LWAAuthorizationCredentials([
-    "clientId" => getenv('SP_API_CLIENT_ID'),
-    "clientSecret" => getenv('SP_API_CLIENT_SECRET'),
-    "refreshToken" => getenv('SP_API_REFRESH_TOKEN'),
-    "endpoint" => getenv('SP_API_ENDPOINT') ?: "https://api.amazon.com/auth/o2/token"
+    "clientId" => $_ENV['SP_API_CLIENT_ID'],
+    "clientSecret" => $_ENV['SP_API_CLIENT_SECRET'],
+    "refreshToken" => $_ENV['SP_API_REFRESH_TOKEN'],
+    "endpoint" => $_ENV['SP_API_ENDPOINT'] ?: "https://api.amazon.com/auth/o2/token"
     ]);
     $config = new Configuration([], $lwaAuthorizationCredentials);
-    $config->setHost(getenv('SP_API_ENDPOINT_HOST') ?: 'https://sandbox.sellingpartnerapi-fe.amazon.com');
+    $config->setHost($_ENV['SP_API_ENDPOINT_HOST'] ?: 'https://sandbox.sellingpartnerapi-fe.amazon.com');
     $this->apiInstance = new {{classname}}($config, null, null);
     $this->testHelper = new TestHelper();
     }
