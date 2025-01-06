@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "The TESTTTT Selling Partner API for Retail Procurement Orders provides programmatic access to vendor orders data.",
+    "description": "The Selling Partner API for Retail Procurement Orders provides programmatic access to vendor orders data.",
     "version": "v1",
     "title": "Selling Partner API for Retail Procurement Orders",
     "contact": {
