@@ -3,7 +3,7 @@
   "info": {
     "description": "The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.",
     "version": "2021-12-28",
-    "title": "Selling Partner API for Direct Fulfillment Shipping TEST",
+    "title": "Selling Partner API for Direct Fulfillment Shipping",
     "contact": {
       "name": "Selling Partner API Developer Support",
       "url": "https://sellercentral.amazon.com/gp/mws/contactus.html"
